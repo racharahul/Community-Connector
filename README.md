@@ -98,6 +98,37 @@ The MVP will focus strictly on core functionality to prove the concept rapidly, 
 - Implemented community data seeding script (`seedCommunities.js`) with sample data for Bengaluru residential communities
 - Added support for multiple building names within each community
 - Included detailed community information (address, type, amenities, total units)
+
+## Deployment Guide
+
+### Deploying to Vercel
+
+1. **Prerequisites**:
+   - A Vercel account
+   - Git repository with your project
+   - MongoDB Atlas database (or other MongoDB provider)
+
+2. **Environment Setup**:
+   - Create a `.env.local` file with your environment variables
+   - Make sure to set `MONGODB_URI`, `JWT_SECRET`, `JWT_EXPIRE`, and `JWT_COOKIE_EXPIRE`
+   - Set `NODE_ENV=production`
+
+3. **Vercel Configuration**:
+   - The project includes a `vercel.json` configuration file that sets up:
+     - Backend API routes (`/api/*` → `server/server.js`)
+     - Frontend static files serving
+     - Build commands for both client and server
+
+4. **Deployment Steps**:
+   - Push your changes to your Git repository
+   - Import your project in the Vercel dashboard
+   - Set your environment variables in the Vercel project settings
+   - Deploy the project
+
+5. **Troubleshooting**:
+   - If build fails, check the build logs for specific errors
+   - Ensure MongoDB connection string is correct and accessible from Vercel
+   - Verify all required environment variables are set in Vercel project settings
 - Created data structure to support the building-unit relationship required for user registration
 
 ### API Development
